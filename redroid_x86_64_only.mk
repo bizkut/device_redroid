@@ -17,6 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 $(call inherit-product, $(LOCAL_PATH)/redroid_64only.mk)
 REDROID_DISABLE_OMX := true
+REDROID_USE_SOURCE_MESA := true
 $(call inherit-product, $(LOCAL_PATH)/redroid.mk)
 $(call inherit-product, $(LOCAL_PATH)/redroid_x86_64_only/device.mk)
 

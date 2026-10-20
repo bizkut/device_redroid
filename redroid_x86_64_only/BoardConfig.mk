@@ -17,3 +17,13 @@ BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 16777216
 
 DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 
+# Build a coherent Android/Bionic Mesa stack for the host's AMD GFX1013 GPU.
+BOARD_MESA3D_USES_MESON_BUILD := true
+BOARD_MESA3D_GALLIUM_DRIVERS := radeonsi
+BOARD_MESA3D_VULKAN_DRIVERS := amd
+BOARD_MESA3D_BUILD_LIBGBM := true
+BOARD_MESA3D_MESON_ARGS := \
+    -Damd-use-llvm=false \
+    -Dgallium-va=disabled \
+    -Dvideo-codecs= \
+    -Dbuild-tests=false

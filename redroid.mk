@@ -132,3 +132,10 @@ $(call inherit-product-if-exists, product.mk)
 $(call inherit-product, vendor/redroid/vendor.mk)
 
 $(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
+
+ifeq ($(REDROID_USE_SOURCE_MESA),true)
+PRODUCT_PACKAGES += \
+    libgallium_dri \
+    libgbm_mesa \
+    dri_gbm
+endif
